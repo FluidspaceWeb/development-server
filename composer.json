@@ -1,0 +1,9 @@
+{
+  "require": {
+    "hashids/hashids": "^4.1",
+    "mongodb/mongodb": "^1.11",
+    "ext-mongodb": "*",
+    "vlucas/phpdotenv": "^5.4",
+    "ext-json": "*"
+  }
+}

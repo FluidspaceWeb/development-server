@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  api-client:
+    build:
+      dockerfile: Dockerfile
+      context: ./
+    container_name: fluidspace-api-client
+    restart: unless-stopped
+    volumes:
+      - api-app:/usr/src/FluidspaceDevApi
+    ports:
+      - "1822:80"
+    depends_on:
+      - mongodb
+  
+  mongodb:
+    image: mongo:6.0.7
+    container_name: fluidspace-mongodb
+    volumes:
+      - mongo-data:/var/lib/mongo
+    ports:
+      - "27027:27017"
+
+volumes:
+  mongo-data:
+  api-app:
+  
