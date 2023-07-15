@@ -32,4 +32,4 @@ The MongoDB instance can be connected via `localhost:27027`, ideally using [mong
 The source code for Web UI is located at `/usr/src/FluidspaceDevApi` in the ***fluidspace-api-client*** docker container.
 
 ## 🤔 What Next?
-Head-on to [Fluidspace App Module Template](https://github.com/rishiktiwari/fluidspace-app-template-vue3) and start developing modules using VueJS.
+Head-on to [Fluidspace App Module Template](https://github.com/FluidspaceWeb/app-template-vue3) and start developing modules using VueJS.
