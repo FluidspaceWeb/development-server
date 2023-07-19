@@ -5,6 +5,8 @@ It consists of an API client and MongoDB launched in a Docker container. You can
 
 Learn more: [What is Fluidspace?](https://gist.github.com/rishiktiwari/645f48422aad7ca7781d1142b3f3b1bd)
 
+Installation video guide: [YouTube](https://youtu.be/MiDPdnPS3bo)
+
 ## ✋🏼 Pre-requisites
 - Docker (with docker-compose)
 
