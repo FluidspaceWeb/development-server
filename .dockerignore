@@ -1,6 +1,6 @@
 **/.DS_Store
 .idea/
+.vscode/
 vendor/
-.env
 .docker-compose-yml
 Dockerfile
