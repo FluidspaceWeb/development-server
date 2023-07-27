@@ -6,6 +6,9 @@
 // file, You can obtain one at http://mozilla.org/MPL/2.0/.
 
 declare(strict_types=1);
+
+use Hashids\Hashids;
+
 require $_SERVER['DOCUMENT_ROOT'] . '/../php/config/mdb_config.inc.php';
 
 function showSummary(): void
@@ -24,9 +27,10 @@ function showSummary(): void
 
 function generateSummaryHTML(): void
 {
+	$hashids = new \Hashids\Hashids($_ENV['APP_SALT']);
 	$client = getConnection();
 	echo '<table>';
-	echo '<thead><tr><th>Database</th><th>modules_data (cols)</th><th>modules_props (cols)</th></tr></thead>';
+	echo '<thead><tr><th>Database</th><th>modules_data (cols)</th><th>modules_props (cols)</th><th>Integration Configs (docs)</th></tr></thead>';
 	echo '<tbody><tr>';
 	
 	$dbs_html = '<td><ul>';
@@ -46,6 +50,15 @@ function generateSummaryHTML(): void
 	$dbs_html = '<td><ul>';
 	foreach($client->selectDatabase('modules_props_dev')->listCollectionNames() as $col) {
 		$dbs_html .= '<li>' . $col . '</li>';
+	}
+	$dbs_html .= '</ul></td>';
+	echo $dbs_html;
+
+	$dbs_html = '<td><ul>';
+	$intConfigs = $client->selectDatabase('module_library')->selectCollection('integration_configs')->find();
+	foreach($intConfigs as $doc) {
+		$hashed_id = $hashids->encodeHex((string)$doc['_id']);
+		$dbs_html .= '<li> id: ' .$hashed_id. '<br>' . ($doc['name'] ?? '---') . '</li>';
 	}
 	$dbs_html .= '</ul></td>';
 	echo $dbs_html;

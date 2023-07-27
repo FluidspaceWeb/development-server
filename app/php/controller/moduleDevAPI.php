@@ -24,8 +24,6 @@ use Hashids\Hashids;
 //use userAuthenticationManager;
 use core\classes\api;
 
-@session_start();
-
 function getPostPayload(): array
 {
     return json_decode(file_get_contents("php://input"), true) ?? [];

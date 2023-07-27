@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="Fluidspace by Auriva Infotech">
+    <meta name="application-name" content="Fluidspace">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <title>Fluidspace Development Server | OAuth2Callback</title>
+    <style>
+        body {
+            font-family: 'Lato', 'Avenir', 'Arial', sans-serif;
+            text-align: left;
+            padding: 1rem;
+        }
+        h3, pre {
+            margin: .375rem 0
+        }
+        a {
+            text-decoration: none;
+        }
+        @media (prefers-color-scheme: dark) {
+            body {
+                background-color: #222;
+                color: #cecece;
+            }
+            a {
+                color: #3ECEF3;
+            }
+        }
+    </style>
+    <script type="text/javascript">
+        const url = new URL(window.location.href);
+        const params = new URLSearchParams(url.search);
+
+        if(window.opener !== null) {
+            window.opener.postMessage(
+                JSON.stringify({
+                    'code': params.get('code'),
+                    'scope': params.get('scope'),
+                    'error': params.get('error')
+                }),
+                '*'
+            );
+            window.close();
+        }
+    </script>
+</head>
+<body>
+<pre><a href="https://fluidspace.app">fluidspace.app</a> OAuth2 Consent Callback, ONLY DEVELOPMENT PURPOSE</pre>
+<h3>Redirecting to app...</h3>
+</body>
+</html>

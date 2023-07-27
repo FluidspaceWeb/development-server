@@ -4,6 +4,8 @@
     "mongodb/mongodb": "^1.11",
     "ext-mongodb": "*",
     "vlucas/phpdotenv": "^5.4",
-    "ext-json": "*"
+    "ext-json": "*",
+    "guzzlehttp/guzzle": "^7.7",
+    "ext-sodium": "*"
   }
 }

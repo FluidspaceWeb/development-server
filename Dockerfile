@@ -14,7 +14,8 @@ RUN apk update && apk upgrade && apk add --update linux-headers \
     && mv composer.phar /usr/local/bin/composer \
     && pecl install mongodb && docker-php-ext-enable mongodb \ 
     && docker-php-ext-install bcmath gmp \
-    && composer install
+    && composer install \
+    && php -f gen_integration_crypto.php
 
 CMD ["php", "-S", "0.0.0.0:80", "-t", "/usr/src/FluidspaceDevApi/app/public", "/usr/src/FluidspaceDevApi/app/public/intercept.php"]
 EXPOSE 80
