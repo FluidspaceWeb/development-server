@@ -1,4 +1,9 @@
-# Fluidspace Development Server v0.1
+# Fluidspace Development Server v0.2
+
+<div align="center">
+<img src="app/public/assets/thumbnail.png" width=70%>
+</div><br>
+
 This server is a trimmed-down version of the [Fluidspace](https://fluidspace.app) backend for the purpose of easier and faster development of modules. It provides CRUD controller for Data and Props REST API.
 
 It consists of an API client and MongoDB launched in a Docker container. You can use the API client without Docker if your development environment has PHP 7.4+, MongoDB and [PHP-MongoDB driver](https://github.com/mongodb/mongo-php-driver) installed.
@@ -34,4 +39,4 @@ The MongoDB instance can be connected via `localhost:27027`, ideally using [mong
 The source code for Web UI is located at `/usr/src/FluidspaceDevApi` in the ***fluidspace-api-client*** docker container.
 
 ## 🤔 What Next?
-Head-on to [Fluidspace App Module Template](https://github.com/FluidspaceWeb/app-template-vue3) and start developing modules using VueJS.
+Head-on to [App](https://github.com/FluidspaceWeb/app-template-vue3) or [Integration](https://github.com/FluidspaceWeb/integration-template-vue3) template and start developing modules using VueJS.
